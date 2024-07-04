@@ -74,3 +74,14 @@
   width: 20px;
   /* transition: transform 0.3s; */
 }
+
+.no-tasks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-tasks-img {
+  height: 100%;
+  width: 100%;
+}

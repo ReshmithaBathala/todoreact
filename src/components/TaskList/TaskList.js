@@ -27,59 +27,78 @@ const TaskList = ({
   editTask,
   toggleComplete,
 }) => {
+  const listLength = tasks.length;
   return (
-    <ul className="tasks-ul-container">
-      {tasks.map((task, index) => (
-        <li
-          key={task.id}
-          className="task-li-item"
-          style={{ borderColor: colors[index % colors.length] }}
-        >
-          <div className="edit-task-container">
-            {task.editing ? (
-              <input
-                type="text"
-                defaultValue={task.task}
-                onBlur={(e) => editTask(task.id, e.target.value)}
-                className="edit-task"
-              />
-            ) : (
-              <span
-                style={{
-                  textDecoration: task.complete ? "line-through" : "none",
-                }}
-                className="task"
-              >
-                {task.task}
-              </span>
-            )}
-            <button onClick={() => toggleEdit(task.id)} className="edit-button">
-              {task.editing ? (
-                <IoSave className="edit-color" />
-              ) : (
-                <FaEdit className="edit-color" />
-              )}
-            </button>
-          </div>
-          <div className="delete-mark-container">
-            <button onClick={() => deleteTask(task.id)} className="edit-button">
-              <MdDeleteOutline className="edit-color" />
-            </button>
-
-            <button
-              onClick={() => toggleComplete(task.id)}
-              className="edit-button"
+    <>
+      {listLength === 0 ? (
+        <div className="no-tasks-container">
+          <img
+            src="https://cdn.dribbble.com/users/1001474/screenshots/10994422/media/6d18221fa30344a6df535ef33b583967.png?compress=1&resize=400x300&vertical=top"
+            alt="no tasks"
+            className="no-tasks-img"
+          />
+        </div>
+      ) : (
+        <ul className="tasks-ul-container">
+          {tasks.map((task, index) => (
+            <li
+              key={task.id}
+              className="task-li-item"
+              style={{ borderColor: colors[index % colors.length] }}
             >
-              {task.complete ? (
-                <IoCheckmarkCircle className="mark-completed" />
-              ) : (
-                <IoCheckmarkCircle className="mark-notyet" />
-              )}
-            </button>
-          </div>
-        </li>
-      ))}
-    </ul>
+              <div className="edit-task-container">
+                {task.editing ? (
+                  <input
+                    type="text"
+                    defaultValue={task.task}
+                    onBlur={(e) => editTask(task.id, e.target.value)}
+                    className="edit-task"
+                  />
+                ) : (
+                  <span
+                    style={{
+                      textDecoration: task.complete ? "line-through" : "none",
+                    }}
+                    className="task"
+                  >
+                    {task.task}
+                  </span>
+                )}
+                <button
+                  onClick={() => toggleEdit(task.id)}
+                  className="edit-button"
+                >
+                  {task.editing ? (
+                    <IoSave className="edit-color" />
+                  ) : (
+                    <FaEdit className="edit-color" />
+                  )}
+                </button>
+              </div>
+              <div className="delete-mark-container">
+                <button
+                  onClick={() => deleteTask(task.id)}
+                  className="edit-button"
+                >
+                  <MdDeleteOutline className="edit-color" />
+                </button>
+
+                <button
+                  onClick={() => toggleComplete(task.id)}
+                  className="edit-button"
+                >
+                  {task.complete ? (
+                    <IoCheckmarkCircle className="mark-completed" />
+                  ) : (
+                    <IoCheckmarkCircle className="mark-notyet" />
+                  )}
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 
