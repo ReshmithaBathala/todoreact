@@ -1,0 +1,76 @@
+.tasks-ul-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.task-li-item {
+  background-color: #ffffff;
+  width: 50%;
+  height: 100px;
+  border-top: 6px solid #ff8f00;
+  border-left: 1px solid #ff8f00;
+  border-bottom: 1px solid #ff8f00;
+  border-right: 1px solid #ff8f00;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.task-li-item:hover {
+  background-color: #fffcfc;
+  transform: scale(1.05);
+}
+.delete-mark-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.edit-task-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.edit-task {
+  height: 30px;
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 6px;
+  outline: none;
+  padding: 10px;
+}
+.task {
+  font-size: 17px;
+  font-family: "Roboto";
+  color: #000000;
+  font-weight: 300;
+}
+.edit-button {
+  height: 30px;
+  width: 30px;
+  border: 0px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.edit-color {
+  color: #ff8f00;
+  height: 20px;
+  width: 20px;
+}
+.mark-completed {
+  color: #43a047;
+  height: 20px;
+  width: 20px;
+  /* animation: turn 0.5s forwards; */
+}
+.mark-notyet {
+  color: #ff0d00;
+  height: 20px;
+  width: 20px;
+  /* transition: transform 0.3s; */
+}
