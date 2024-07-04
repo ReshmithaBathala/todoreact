@@ -26,4 +26,4 @@ Download Node.js is installed on your machine. You can download it from nodejs.o
     4. Start the application: `npm start`
 ## Deployment
 
-Deployed Fullstack URL: 
+Deployed Fullstack URL: https://todoreact-zeta.vercel.app/
